@@ -18,7 +18,14 @@ namespace TesteConsole
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller}/action/{id?}",
+                    defaults: new { controller = "Home", action = "Index" }
+                    );
+            });
         }
     }
 }
