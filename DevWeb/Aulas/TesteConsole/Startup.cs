@@ -18,6 +18,7 @@ namespace TesteConsole
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseDeveloperExceptionPage();
             //app.UseMvc(routes =>
             //{
             //    routes.MapRoute(
